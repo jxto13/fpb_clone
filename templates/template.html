@@ -63,7 +63,7 @@
             </div>
           </div>
           <hr />
-          <!-- Video Section -->
+          <!-- Video Section Liga Betclic-->
           <div class="video-block section-padding">
             <div class="row">
               <div class="col-md-12">
@@ -104,7 +104,7 @@
             </div>
           </div>
           <hr class="mt-0" />
-          <!-- Video Section -->
+          <!-- Video Section Liga Betclic Feminina-->
           <div class="video-block section-padding">
             <div class="row">
               <div class="col-md-12">
@@ -144,8 +144,87 @@
               {% endfor %}
             </div>
           </div>
+          <!-- Video Section FIBA Europe Cup -->
+          <div class="video-block section-padding">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="main-title">
+                  <h6>FIBA Europe Cup</h6>
+                </div>
+              </div>
+              <!-- Thumbnail template -->
+              {% for i in data_liga_euro %}
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="video-card">
+                  <div class="video-card-image">
+                    <a class="play-icon" href="{{i[1]}}"
+                      ><i class="fas fa-play-circle"></i
+                    ></a>
+                    <a href="#"
+                      ><img class="img-fluid" src="{{i[2]}}" alt=""
+                    /></a>
+                    <!-- <div class="time">3:50</div> -->
+                  </div>
+                  <div class="video-card-body">
+                    <div class="video-title">
+                      <a href="{{i[1]}}">{{i[0]}}</a>
+                    </div>
+                    <div>{{i[3]}}</div>
+                    <div>{{i[4]}}</div>
 
-          <!-- Video Section -->
+                    <!-- <div class="video-page text-success">
+                    Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+                 </div>
+                 <div class="video-view">
+                    1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+                 </div> -->
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!-- Video Section Pro Liga-->
+          <div class="video-block section-padding">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="main-title">
+                  <h6>Pro Liga</h6>
+                </div>
+              </div>
+              <!-- Thumbnail template -->
+              {% for i in data_pro_liga %}
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="video-card">
+                  <div class="video-card-image">
+                    <a class="play-icon" href="{{i[1]}}"
+                      ><i class="fas fa-play-circle"></i
+                    ></a>
+                    <a href="#"
+                      ><img class="img-fluid" src="{{i[2]}}" alt=""
+                    /></a>
+                    <!-- <div class="time">3:50</div> -->
+                  </div>
+                  <div class="video-card-body">
+                    <div class="video-title">
+                      <a href="{{i[1]}}">{{i[0]}}</a>
+                    </div>
+                    <div>{{i[3]}}</div>
+                    <div>{{i[4]}}</div>
+
+                    <!-- <div class="video-page text-success">
+                    Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
+                 </div>
+                 <div class="video-view">
+                    1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
+                 </div> -->
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!-- Video Section CN2 Masculina-->
           <div class="video-block section-padding">
             <div class="row">
               <div class="col-md-12">
