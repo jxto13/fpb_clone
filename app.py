@@ -76,6 +76,9 @@ def some_place_page(some_place):
     for i in liga_euro:
         if(i[1] == some_place):
             return render_template('video-page.html', data = i)
+    for i in pro_liga:
+        if(i[1] == some_place):
+            return render_template('video-page.html', data = i)
     for i in cn2_masc:
         if(i[1] == some_place):
             return render_template('video-page.html', data = i)
