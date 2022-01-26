@@ -65,6 +65,18 @@ liga_euro= []
 for i in data:
     liga_euro.append(split_data(i))
 
+# cn1 mas
+url = "https://sky-video-api.global.ssl.fastly.net/1/channel/52/lives?iso=pt&ids=playlists,labels,profile,playlists,channels&token=1643200790_afe9a3926d577cd6a61ddae6e715b848dbddb9ad_IGW1Ar7TbRE1UtQa_zlf7zt9xgeinydl7&apikey=IGW1Ar7TbRE1UtQa&apitoken=zlf7zt9xgeinydl7"
+
+response = requests.get(url)
+data = json.loads(response.text)
+data = data['data']
+
+cn1_masc = []
+for i in data:
+    cn1_masc.append(split_data(i))
+
+
 @app.route('/<some_place>')
 def some_place_page(some_place):
     for i in liga:
@@ -82,9 +94,12 @@ def some_place_page(some_place):
     for i in cn2_masc:
         if(i[1] == some_place):
             return render_template('video-page.html', data = i)
+    for i in cn1_masc:
+        if(i[1] == some_place):
+            return render_template('video-page.html', data = i)
     
 
 @app.route("/")
 def hello_world():
     return render_template('template.html', data_liga = liga, data_liga_feminina = liga_feminina, 
-    data_liga_euro = liga_euro, data_pro_liga = pro_liga, data_cn2_masc = cn2_masc)
+    data_liga_euro = liga_euro, data_pro_liga = pro_liga,data_cn1_masc = cn1_masc, data_cn2_masc = cn2_masc)
