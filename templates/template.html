@@ -1,346 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="Askbootstrap" />
-    <meta name="author" content="Askbootstrap" />
-    <title></title>
-    <!-- Favicon Icon -->
-    <!-- <link rel="icon" type="image/png" href="img/favicon.png"> -->
-    <!-- Bootstrap core CSS-->
-    <link
-      href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
-      rel="stylesheet"
-    />
-    <!-- Custom fonts for this template-->
-    <link
-      href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Custom styles for this template-->
-    <link
-      href="{{ url_for('static', filename='css/osahan.css') }}"
-      rel="stylesheet"
-    />
-    <!-- Owl Carousel -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='vendor/owl-carousel/owl.theme.css') }}"
-    />
-  </head>
-  <body id="page-top">
-    <nav
-      class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top"
-    >
-      &nbsp;&nbsp;
-    </nav>
-    <div id="wrapper">
-      <div id="content-wrapper">
-        <div class="container-fluid pb-0">
-          <div class="top-category section-padding mb-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>Channels Categories</h6>
-                </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Askbootstrap" />
+  <meta name="author" content="Askbootstrap" />
+  <title></title>
+  <!-- Favicon Icon -->
+  <!-- <link rel="icon" type="image/png" href="img/favicon.png"> -->
+  <!-- Bootstrap core CSS-->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+  <!-- Custom fonts for this template-->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+    type="text/css" />
+  <!-- Custom styles for this template-->
+  <link href="{{ url_for('static', filename='css/osahan.css') }}" rel="stylesheet" />
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl-carousel/owl.theme.css') }}" />
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
+    &nbsp;&nbsp;
+  </nav>
+  <div id="wrapper">
+    <div id="content-wrapper">
+      <div class="container-fluid pb-0">
+        <div class="top-category section-padding mb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title">
+                <h6>Channels Categories</h6>
               </div>
             </div>
           </div>
-          <hr />
-          <!-- Video Section Liga Betclic-->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>Liga Betclic</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_liga %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
+        </div>
+        <hr />
 
-                    <!-- <div class="video-page text-success">
+        <!-- Video Section -->
+        {% for i in data %}
+        <div class="video-block section-padding">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title">
+                <h6>{{i[1]}}</h6>
+              </div>
+            </div>
+            <!-- {% set testing = 'it worked' %} -->
+            <!-- Thumbnail template -->
+            {% for j in i[3] %}
+            <!-- {% if(testing != j[3]) %} -->
+            <!-- <div>{{j[3]}}</div> -->
+
+            <!-- {% endif %} -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="video-card">
+                <div class="video-card-image">
+                  <a class="play-icon" href="{{j[1]}}"><i class="fas fa-play-circle"></i></a>
+                  <a href="#"><img class="img-fluid" src="{{j[2]}}" alt="" /></a>
+                  <!-- <div class="time">3:50</div> -->
+                </div>
+                <div class="video-card-body">
+                  <div class="video-title">
+                    <a href="{{j[1]}}">{{j[0]}}</a>
+                  </div>
+                  <div>{{j[3]}}</div>
+                  <div>{{j[4]}}</div>
+
+                  <!-- <div class="video-page text-success">
                                  Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
                               </div>
                               <div class="video-view">
                                  1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
                               </div> -->
-                  </div>
                 </div>
               </div>
-              {% endfor %}
             </div>
+            {% endfor %}
           </div>
-          <hr class="mt-0" />
-          <!-- Video Section Liga Betclic Feminina-->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>Liga Betclic Feminina</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_liga_feminina %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
+          <hr class="mt-0">
+        </div>
+        {% endfor %}
+        <!-- End of Video Section -->
 
-                    <!-- <div class="video-page text-success">
-                              Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
-                           </div>
-                           <div class="video-view">
-                              1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
-                           </div> -->
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <hr class="mt-0" />
-          <!-- Video Section FIBA Europe Cup -->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>FIBA Europe Cup</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_liga_euro %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
-
-                    <!-- <div class="video-page text-success">
-                    Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
-                 </div>
-                 <div class="video-view">
-                    1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
-                 </div> -->
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <hr class="mt-0" />
-          <!-- Video Section Pro Liga-->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>Pro Liga</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_pro_liga %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
-
-                    <!-- <div class="video-page text-success">
-                    Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
-                 </div>
-                 <div class="video-view">
-                    1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
-                 </div> -->
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <hr class="mt-0" />
-          <!-- Video Section CN2 Masculina-->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>CN1 Masculina</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_cn1_masc %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
-
-                    <!-- <div class="video-page text-success">
-                              Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
-                           </div>
-                           <div class="video-view">
-                              1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
-                           </div> -->
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <hr class="mt-0" />
-          <!-- Video Section CN2 Masculina-->
-          <div class="video-block section-padding">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="main-title">
-                  <h6>CN2 Masculina</h6>
-                </div>
-              </div>
-              <!-- Thumbnail template -->
-              {% for i in data_cn2_masc %}
-              <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="video-card">
-                  <div class="video-card-image">
-                    <a class="play-icon" href="{{i[1]}}"
-                      ><i class="fas fa-play-circle"></i
-                    ></a>
-                    <a href="#"
-                      ><img class="img-fluid" src="{{i[2]}}" alt=""
-                    /></a>
-                    <!-- <div class="time">3:50</div> -->
-                  </div>
-                  <div class="video-card-body">
-                    <div class="video-title">
-                      <a href="{{i[1]}}">{{i[0]}}</a>
-                    </div>
-                    <div>{{i[3]}}</div>
-                    <div>{{i[4]}}</div>
-
-                    <!-- <div class="video-page text-success">
-                              Education  <a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></a>
-                           </div>
-                           <div class="video-view">
-                              1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
-                           </div> -->
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
+      </div>
+      <!-- /.container-fluid -->
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-lg-6 col-sm-6">
+              <p class="mt-1 mb-0">
+                <strong class="text-dark">Theme from Aakash Padhiyar</strong>.
+                <small class="mt-0 mb-0"><a class="text-primary" target="_blank"
+                    href="https://github.com/8140171224/VIDOE">Github</a>
+                </small>
+              </p>
             </div>
           </div>
         </div>
-        <!-- /.container-fluid -->
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container">
-            <div class="row no-gutters">
-              <div class="col-lg-6 col-sm-6">
-                <p class="mt-1 mb-0">
-                  <strong class="text-dark">Theme from Aakash Padhiyar</strong>.
-                  <small class="mt-0 mb-0"
-                    ><a
-                      class="text-primary"
-                      target="_blank"
-                      href="https://github.com/8140171224/VIDOE"
-                      >Github</a
-                    >
-                  </small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <!-- /.content-wrapper -->
+      </footer>
     </div>
-    <!-- /#wrapper -->
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+    <!-- /.content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <!-- Owl Carousel -->
-    <script src="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.js') }}"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-  </body>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <!-- Owl Carousel -->
+  <script src="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.js') }}"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
 </html>
