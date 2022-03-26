@@ -50,7 +50,7 @@ def some_place_page(some_place):
     for i in ligas:
         for j in i[3]:
             if(j[1] == some_place):
-                return render_template('video-page.html', data = i[3][0])
+                return render_template('video-page.html', data = j )
 
     
 @app.route("/")
