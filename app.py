@@ -23,12 +23,13 @@ endURL = "lives?iso=pt&page=1&order=asc&order_by=position&ids=playlists,labels,p
 token = "token=1638670429_f7d796eafca3b84a9f2d5ebb81c9e08980fcc3b7_IGW1Ar7TbRE1UtQa_zlf7zt9xgeinydl7"
 apikey = "apikey=IGW1Ar7TbRE1UtQa&apitoken=zlf7zt9xgeinydl7"
 
-ligas = [["54","Liga Betclic"],
-        ["50","Liga Betclic Feminina"],
+ligas = [["99","Liga Betclic"],
+        ["100","Liga Betclic Feminina"],
+        ["107","1ª Divisão Feminina"],
         ["70","FIBA Europe Cup"],
-        ["49","Pro Liga"],
-        ["52","CN1 Masculina"],
-        ["56","CN2 Masculina"]
+        ["105","Pro Liga"],
+        #["52","CN1 Masculina"],
+        #["56","CN2 Masculina"]
         ]
 
 for i in ligas:
