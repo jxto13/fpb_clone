@@ -1,8 +1,15 @@
 from flask import Flask, render_template
 from datetime import datetime, timedelta
 import requests, json 
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
+
+def get_mpd_link(html__url):
+    reqs = requests.get(html__url)
+    soup = BeautifulSoup(reqs.text, 'html.parser')
+    output = json.loads(soup.find("video")['data-setup'])
+    return output['sources'][0]['src']
 
 def split_data(data):
     title = data['profile']['l10n'][0]['title']
@@ -13,7 +20,7 @@ def split_data(data):
     date = datetime.strptime(date,'%Y/%m/%d %H:%M:%S')
     date += timedelta(minutes=10)
     fase = data['playlists']['data'][0]['l10n'][0]['name']
-    embedLink = data['embedLink']
+    embedLink = get_mpd_link(data['embedLink'])
     return [title,slug,image,date,fase,embedLink]
 
 
@@ -46,7 +53,7 @@ for i in ligas:
     i.append(size)
     i.append(tmp)
 
-@app.route('/<some_place>')
+@app.route('/live/<some_place>')
 def some_place_page(some_place):
     for i in ligas:
         for j in i[3]:

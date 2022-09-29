@@ -10,22 +10,32 @@
   <title></title>
   <!-- Favicon Icon -->
   <!-- <link rel="icon" type="image/png" href="img/favicon.png"> -->
+  <link href="/static/img/favicon.png" rel="icon" type="image/png" />
   <!-- Bootstrap core CSS-->
-  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Custom fonts for this template-->
-  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
     type="text/css" />
   <!-- Custom styles for this template-->
-  <link href="{{ url_for('static', filename='css/osahan.css') }}" rel="stylesheet" />
+  <link href="/static/css/osahan.css" rel="stylesheet" />
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl-carousel/owl.theme.css') }}" />
+  <link rel="stylesheet" href="/static/vendor/owl-carousel/owl.carousel.css" />
+  <link rel="stylesheet" href="/static/vendor/owl-carousel/owl.theme.css" />
+  
+
 </head>
 
 <body id="page-top">
   <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
-    &nbsp;&nbsp;
-  </nav>
+    <a class="nav-link" href="/">
+       Home
+    </a>
+    {% for i in data %}
+      <a class="nav-link" href="/videos/{{i[1]}}">
+        {{i[1]}}
+      </a>
+    {% endfor %}
+ </nav>
   <div id="wrapper">
     <div id="content-wrapper">
       <div class="container-fluid pb-0">
@@ -33,7 +43,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="main-title">
-                <h6>Channels Categories</h6>
+                <h6>Live</h6>
               </div>
             </div>
           </div>
@@ -59,7 +69,7 @@
             <div class="col-xl-3 col-sm-6 mb-3">
               <div class="video-card">
                 <div class="video-card-image">
-                  <a class="play-icon" href="{{j[1]}}"><i class="fas fa-play-circle"></i></a>
+                  <a class="play-icon" href="live/{{j[1]}}"><i class="fas fa-play-circle"></i></a>
                   <a href="#"><img class="img-fluid" src="{{j[2]}}" alt="" /></a>
                   <!-- <div class="time">3:50</div> -->
                 </div>
@@ -113,14 +123,14 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
-  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
   <!-- Owl Carousel -->
-  <script src="{{ url_for('static', filename='vendor/owl-carousel/owl.carousel.js') }}"></script>
+  <script src="/static/vendor/owl-carousel/owl.carousel.js"></script>
   <!-- Custom scripts for all pages-->
-  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  <script src="/static/js/custom.js"></script>
 </body>
 
 </html>
