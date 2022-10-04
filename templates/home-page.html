@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block title %}Home Page{% endblock %}
+
+
+{% block content %}
+<div id="page-top">
+  
+  <div id="wrapper">
+    <div id="content-wrapper">
+      <div class="container-fluid pb-0">
+        <div class="top-category section-padding mb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title">
+                <h6>Live</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Video Section -->
+        {% for i in data %}
+        <div class="video-block section-padding">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title">
+                <h6>{{i[1]}}</h6>
+              </div>
+            </div>
+            <!-- Thumbnail template -->
+            {% for j in i[3] %}
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="video-card">
+                <div class="video-card-image">
+                  <a class="play-icon" href="live/{{j[1]}}"><i class="fas fa-play-circle"></i></a>
+                  <a href="#"><img class="img-fluid" src="{{j[2]}}" alt="" /></a>
+                </div>
+                <div class="video-card-body">
+                  <div class="video-title">
+                    <a href="{{j[1]}}">{{j[0]}}</a>
+                  </div>
+                  <div>{{j[3]}}</div>
+                  <div>{{j[4]}}</div>
+
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <hr class="mt-0">
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+{% endblock %}

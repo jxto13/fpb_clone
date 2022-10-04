@@ -60,7 +60,10 @@ def some_place_page(some_place):
             if(j[1] == some_place):
                 return render_template('video-page.html', data = j )
 
-    
+@app.route('/videos')
+def index_videos_page():
+    return render_template('index-videos-page.html', data = ligas)
+
 @app.route("/")
-def hello_world():
-    return render_template('template.html', data = ligas)
+def main_page():
+    return render_template('home-page.html', data = ligas)

@@ -73,7 +73,7 @@ Version: 1.0
     var $anchor = $(this);
     $('html, body').stop().animate({
       scrollTop: ($($anchor.attr('href')).offset().top)
-    }, 1000, 'easeInOutExpo');
+    }, 500, 'easeInOutExpo');
     event.preventDefault();
   });
 
